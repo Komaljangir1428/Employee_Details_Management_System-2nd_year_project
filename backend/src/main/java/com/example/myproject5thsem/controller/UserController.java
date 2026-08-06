@@ -16,11 +16,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
-@CrossOrigin("https://employee-management-backend.vercel.app") // Replace with your actual Vercel URL (or use "*" for
-                                                               // testing)
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {
+    RequestMethod.GET,
+    RequestMethod.POST,
+    RequestMethod.PUT,
+    RequestMethod.DELETE,
+    RequestMethod.OPTIONS
+})
 public class UserController {
+
   @Autowired
   private UserRepository userRepository;
 
@@ -38,7 +45,6 @@ public class UserController {
   User getUserById(@PathVariable Long id) {
     return userRepository.findById(id)
         .orElseThrow(() -> new UserNotFoundException(id));
-
   }
 
   @PutMapping("/user/{id}")
@@ -60,5 +66,4 @@ public class UserController {
     userRepository.deleteById(id);
     return "user with id " + id + " has been deleted.";
   }
-
 }
