@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin("https://employee-management-backend.vercel.app") // Replace with your actual Vercel URL (or use "*" for
+                                                               // testing)
 public class UserController {
   @Autowired
   private UserRepository userRepository;
