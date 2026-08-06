@@ -3,9 +3,12 @@ package com.example.myproject5thsem.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table; // Import Table annotation
 
 @Entity
+@Table(name = "users") // Escapes reserved SQL keyword 'user'
 public class User {
+
   @Id
   @GeneratedValue
   private Long id;
@@ -13,6 +16,7 @@ public class User {
   private String name;
   private String email;
 
+  // Getters and Setters remain the same
   public Long getId() {
     return id;
   }
