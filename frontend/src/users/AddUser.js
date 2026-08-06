@@ -22,16 +22,20 @@ export default function AddUser() {
   };
 
   const onSubmit = async (e) => {
-  e.preventDefault();
-  alert("Form submit triggered!"); // Test popup
-
-  try {
-    await axios.post("https://employee-management-backend.onrender.com/user", user);
-    navigate("/");
-  } catch (error) {
-    alert("Error: " + error.message);
-  }
-};
+    e.preventDefault();
+    try {
+      // 1. Send data to backend
+      const response = await axios.post("https://employee-management-backend.onrender.com/user", user);
+      console.log("Response:", response.data);
+      alert("User added successfully!");
+      
+      // 2. Redirect back to Home page
+      navigate("/");
+    } catch (error) {
+      console.error("Submission Error:", error);
+      alert("Failed to submit: " + (error.response?.data?.message || error.message));
+    }
+  };
 
 
   return (

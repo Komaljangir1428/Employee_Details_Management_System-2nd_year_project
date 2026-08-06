@@ -13,8 +13,12 @@ export default function Home() {
   }, []);
 
   const loadUsers = async () => {
-    const result = await axios.get("https://employee-management-backend.onrender.com/users");
-    setUsers(result.data);
+    try {
+      const result = await axios.get("https://employee-management-backend.onrender.com/users");
+      setUsers(result.data);
+    } catch (error) {
+      console.error("Error loading users:", error);
+    }
   };
 
   const deleteUser = async (id) => {
