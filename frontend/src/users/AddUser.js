@@ -23,20 +23,39 @@ export default function AddUser() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    alert("Attempting to send data to Render...");
+
     try {
-      // 1. Send data to backend
-      const response = await axios.post("https://employee-management-backend.onrender.com/user", user);
-      console.log("Response:", response.data);
-      alert("User added successfully!");
+      const response = await axios.post(
+        "https://employee-management-backend.onrender.com/user",
+        user,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       
-      // 2. Redirect back to Home page
+      alert("SUCCESS! User added with ID: " + response.data.id);
       navigate("/");
     } catch (error) {
-      console.error("Submission Error:", error);
-      alert("Failed to submit: " + (error.response?.data?.message || error.message));
+      console.error("Full Axios Error:", error);
+
+      if (error.response) {
+        // The server responded with a status code outside the 2xx range
+        alert(
+          `SERVER ERROR (${error.response.status}): ` +
+            JSON.stringify(error.response.data)
+        );
+      } else if (error.request) {
+        // The request was made but no response was received (CORS, network failure, or backend down)
+        alert("NETWORK ERROR: Backend server did not respond or blocked request (CORS/Cold Start).");
+      } else {
+        // Something went wrong setting up the request
+        alert("REQUEST ERROR: " + error.message);
+      }
     }
   };
-
 
   return (
     <div className="container">
