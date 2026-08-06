@@ -25,17 +25,28 @@ export default function EditUser() {
 
   useEffect(() => {
     loadUser();
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`https://employee-management-backend.onrender.com/users/${id}`, user)
-    navigate("/")
+    try {
+      // Fixed: changed /users/ to /user/
+      await axios.put(`https://employee-management-backend.onrender.com/user/${id}`, user);
+      navigate("/");
+    } catch (error) {
+      console.error("Error updating user:", error);
+    }
   };
 
   const loadUser = async () => {
-    const result = await axios.get(`https://employee-management-backend.onrender.com/users/${id}`)
-    setUser(result.data)
+    try {
+      // Fixed: changed /users/ to /user/
+      const result = await axios.get(`https://employee-management-backend.onrender.com/user/${id}`);
+      setUser(result.data);
+    } catch (error) {
+      console.error("Error loading user:", error);
+    }
   };
 
 

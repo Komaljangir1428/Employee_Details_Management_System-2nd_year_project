@@ -23,8 +23,13 @@ export default function AddUser() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-   await axios.post("https://employee-management-backend.onrender.com/users",user)
-    navigate("/")
+    try {
+      // Fixed endpoint from /users to /user (singular)
+      await axios.post("https://employee-management-backend.onrender.com/user", user);
+      navigate("/");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
 
