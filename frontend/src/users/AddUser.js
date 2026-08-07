@@ -34,7 +34,7 @@ export default function AddUser() {
       setLoading(false);
       console.error("Submission failed:", error);
       alert(
-        "Failed to save user. Make sure the Render backend is awake: " +
+        "Failed to save user: " +
         (error.response?.data?.message || error.message)
       );
     }
