@@ -25,7 +25,7 @@ export default function AddUser() {
 
     try {
       await axios.post(
-        "https://employee-management-backend.onrender.com/user",
+        "https://employee-details-management-system-2nd-1xg7.onrender.com/user",
         user
       );
       setLoading(false);

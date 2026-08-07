@@ -32,7 +32,7 @@ export default function EditUser() {
     e.preventDefault();
     try {
       // Fixed: changed /users/ to /user/
-      await axios.put(`https://employee-management-backend.onrender.com/user/${id}`, user);
+      await axios.put(`https://employee-details-management-system-2nd-1xg7.onrender.com/user/${id}`, user);
       navigate("/");
     } catch (error) {
       console.error("Error updating user:", error);
@@ -42,7 +42,7 @@ export default function EditUser() {
   const loadUser = async () => {
     try {
       // Fixed: changed /users/ to /user/
-      const result = await axios.get(`https://employee-management-backend.onrender.com/user/${id}`);
+      const result = await axios.get(`https://employee-details-management-system-2nd-1xg7.onrender.com/user/${id}`);
       setUser(result.data);
     } catch (error) {
       console.error("Error loading user:", error);

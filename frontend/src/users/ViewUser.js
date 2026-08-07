@@ -18,7 +18,7 @@ export default function ViewUser() {
   const loadUser = async () => {
     try {
       // Fixed: changed /users/ to /user/ (singular)
-      const result = await axios.get(`https://employee-management-backend.onrender.com/user/${id}`);
+      const result = await axios.get(`https://employee-details-management-system-2nd-1xg7.onrender.com/user/${id}`);
       setUser(result.data);
     } catch (error) {
       console.error("Error loading user details:", error);
