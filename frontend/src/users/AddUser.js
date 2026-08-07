@@ -55,6 +55,36 @@ export default function AddUser() {
         alert("REQUEST ERROR: " + error.message);
       }
     }
+  };const onSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "https://employee-management-backend.onrender.com/user",
+        user,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      
+      alert("SUCCESS! User added with ID: " + response.data.id);
+      navigate("/");
+    } catch (error) {
+      console.error("Full Axios Error:", error);
+
+      if (error.response) {
+        alert(
+          `SERVER ERROR (${error.response.status}): ` +
+            JSON.stringify(error.response.data)
+        );
+      } else if (error.request) {
+        alert("NETWORK ERROR: Backend server did not respond or blocked request.");
+      } else {
+        alert("REQUEST ERROR: " + error.message);
+      }
+    }
   };
 
   return (
