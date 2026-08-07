@@ -19,7 +19,7 @@ export default function AddUser() {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  const onSubmit = async (e) => {
+ const onSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
@@ -29,14 +29,12 @@ export default function AddUser() {
         user
       );
       setLoading(false);
-      navigate("/");
+      // Hard redirect to clear any state locks
+      window.location.href = "/";
     } catch (error) {
       setLoading(false);
       console.error("Submission failed:", error);
-      alert(
-        "Failed to save user: " +
-        (error.response?.data?.message || error.message)
-      );
+      alert("Failed to save user: " + (error.response?.data?.message || error.message));
     }
   };
 
