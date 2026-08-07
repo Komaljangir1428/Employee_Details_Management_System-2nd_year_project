@@ -3,18 +3,17 @@
 A full-stack web application for managing employee records, featuring a responsive React frontend and a robust Spring Boot REST API backed by an H2 database.
 
 [![Live Demo](https://img.shields.io/badge/Demo-Live%20App-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://employee-details-management-system-2nd-year-project-zvd08i9k6.vercel.app)
-
 [![Backend Status](https://img.shields.io/badge/API-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://employee-details-management-system-2nd-1xg7.onrender.com/users)
 
 ---
 
 ## 🚀 Live Links
 
-- **Frontend App:** [Employee Details Management System](https://employee-details-management-system-2nd-year-project-zvd08i9k6.vercel.app)
+- **Frontend App:** [Employee Details Management System](https://employee-details-management-system-phi.vercel.app)
 - **Backend API Base:** `https://employee-details-management-system-2nd-1xg7.onrender.com`
 
 ---
-https://employee-details-management-system-phi.vercel.app
+
 
 ## Features
 
