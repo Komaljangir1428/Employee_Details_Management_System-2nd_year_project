@@ -1,8 +1,8 @@
-# 🏢 Employee Details Management System
+#  Employee Details Management System
 
 A full-stack web application for managing employee records, featuring a responsive React frontend and a robust Spring Boot REST API backed by an H2 database.
 
-[![Live Demo](https://img.shields.io/badge/Demo-Live%20App-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://employee-details-management-system-2nd-year-project-zvd08i9k6.vercel.app)
+[![Live Demo](https://employee-details-management-system-2nd-year-project-9r58kktl3.vercel.app/)
 [![Backend Status](https://img.shields.io/badge/API-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://employee-details-management-system-2nd-1xg7.onrender.com/users)
 
 ---
@@ -14,7 +14,7 @@ A full-stack web application for managing employee records, featuring a responsi
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Full CRUD Functionality:** Create, Read, Update, and Delete employee records.
 - **Dynamic Dashboard:** Real-time data visualization of all registered employees.
@@ -24,7 +24,7 @@ A full-stack web application for managing employee records, featuring a responsi
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 **Frontend:**
 
@@ -47,7 +47,7 @@ A full-stack web application for managing employee records, featuring a responsi
 
 ---
 
-## 📌 API Endpoints
+##  API Endpoints
 
 | Method   | Endpoint     | Description                            |
 | :------- | :----------- | :------------------------------------- |
@@ -59,7 +59,7 @@ A full-stack web application for managing employee records, featuring a responsi
 
 ---
 
-## 💻 Local Setup & Installation
+##  Local Setup & Installation
 
 ### Prerequisites
 
